@@ -1,0 +1,31 @@
+{
+    "name": "next-custom-select",
+    "version": "1.0.0",
+    "description": "A custom select component for Next.js",
+    "main": "index.js",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "prepublishOnly": "npm test && npm run build",
+      "lint": "eslint . --fix"
+    },
+    "keywords": [
+      "react",
+      "nextjs",
+      "select",
+      "dropdown"
+    ],
+    "author": "TOMAZKI",
+    "license": "MIT",
+    "dependencies": {
+      "next": "^12.0.0",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+      "eslint": "^7.32.0",
+      "eslint-config-next": "^12.0.0"
+    }
+  }
+  

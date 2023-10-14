@@ -1,0 +1,90 @@
+.CustomSelect {
+  display: block;
+  color: #202124;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  min-width: 150px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.CustomSelect .selectedValue {
+  border: 2px solid #f2f2f2;
+  background-color: #fff;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.CustomSelect .selectedValue > input {
+  border: none;
+  padding-right: 40px;
+  padding-left: 20px;
+}
+
+.CustomSelect .selectedValue #selectIcon {
+  width: 20px;
+  height: 20px;
+  fill: #f2f2f2;
+  pointer-events: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.CustomSelect > ul {
+  display: none;
+  border: 2px solid #f2f2f2;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: calc(100%);
+  width: 100%;
+  z-index: 5;
+  max-height: calc(50px * 5);
+  overflow-y: auto;
+  border-radius: 0 0 6px 6px;
+  scrollbar-width: auto;
+  scrollbar-color: hsl(0, 0%, 95%);
+}
+
+.CustomSelect > ul::-webkit-scrollbar {
+  width: 14px;
+  border-radius: 6px;
+}
+
+.CustomSelect > ul::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 80%);
+  border-radius: 0 0 6px 0;
+}
+
+.CustomSelect > ul::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 0 0 6px 0;
+}
+
+.CustomSelect > ul > li {
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CustomSelect > ul > li.selected,
+.CustomSelect > ul > li:hover {
+  background-color: #f2f2f2;
+}
+
+.CustomSelect.optionsOpen .selectedValue {
+  border-radius: 6px 6px 0 0;
+  border-color: #f2f2f2;
+}
+
+.CustomSelect.optionsOpen > ul {
+  display: block;
+}
