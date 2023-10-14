@@ -23,18 +23,23 @@ const NextCustomSelect = ({ options, selected, customClasses, onSelect, placehol
 
   // Handle clicks outside of the select to close dropdown
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (selectRef.current && !selectRef.current.contains(e.target)) {
-        setOptionsOpen(false);
-      }
-    };
+    // Ensuring this code runs only on the client-side
+    setIsClient(true);
+    
+    if (isClient) {
+      const handleClickOutside = (e) => {
+        if (selectRef.current && !selectRef.current.contains(e.target)) {
+          setOptionsOpen(false);
+        }
+      };
 
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [isClient]);
 
   const getSelectedOptionName = () => {
     const selectedOption = options.find(option => option.value === currentSelected);
